@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Servicio OIJ</title>
+    <link href="index.css" rel="stylesheet" type="text/css"> 
+
+    
+
+    <style type="text/css">
+        #container {
+          width: 800px;
+          height: 800px;
+          margin: auto;
+        }
+      </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="logo.png" width= "70" alt="Logotipo" class="logo">
+        
+        <!-- Menú de mi página -->
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro de llamadas</a></li>
+                <li><a href="#">Grafos de llamadas</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+</script>
+
+<div id="container"></div>
+<script src="sigma.min.js"></script>
+<script src="sigma.parsers.json.min.js"></script>
+<script>
+
+  function dragGhraps(jsonF) {
+
+    sigma.parsers.json(jsonF, {
+    container: 'container',
+    settings: {
+      defaultNodeColor: '#ec5148'
+    }
+  });
+}
+
+function dragGhrapsAux(){
+fetch('url')
+  .then(Response => Response.json())
+  .then(data => {
+    dragGhraps(data)
+  })
+
+  console.log("en ejecucion")
+}
+
+function deleteA(){
+  console.log("eliminando")
+}
+
+function actualizar(){
+  console.log("")
+}
+
+</script>
+
+<button onclick="dragGhraps('datos.json')">Agregar</button>
+<button onclick="deleteA">Eliminar</button>
+<button onclick="actualizar">Actualizar</button>
+
+
+
+</body>
+</html>

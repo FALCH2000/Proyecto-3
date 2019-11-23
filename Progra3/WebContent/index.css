@@ -1,0 +1,82 @@
+
+/* Este archivo contiene el css
+    encargado del diseño de la página principal */
+
+    * {
+      font-family: sans-serif; /* Change your font family */
+    }
+  header{
+      width: 100%;
+      background: #74A5CA;
+  }
+  
+  
+        /* Contenido del diseño del menu*/
+        .menu ul{
+            margin: 0;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+  
+        .menu li:hover{
+          background: rgba(0, 0, 0, 0.15);
+        }
+  
+        .menu li a{
+            display: block;
+            padding: 20px 20px;
+            color: seashell;
+            text-decoration: none;
+        }
+  
+        /* Este contenido es para la parte del body*/
+        .secMenu {
+            margin: auto;
+            margin-top: 50px;
+            width: 900px;
+            height: 100px; 
+            background: rgb(23, 41, 100);
+            color: white;
+            border: 2px solid black;
+        } 
+        .logo{
+          float: left;
+        }
+        .service-title{
+          margin-top: 35px;
+          margin-left: 270px;
+          font-size: 60px;
+          float: left;
+        }
+  
+        /* Este contenido respecta a la parte de */
+        .thirdMenu {
+          margin: auto;
+          margin-top: 50px;
+          width: 900px;
+          height: 300px; 
+          background: rgb(255, 255, 255);
+          border: none;
+        } 
+        /* Estos estilos son del botón para cargar archivos*/
+        .custom-button {
+          padding: 10px;
+          color: rgb(186, 228, 229);
+          background-color: crimson;
+          border: 1px solid #000;
+          border-radius: 5px;
+          cursor : pointer;
+          margin-left: 0px;
+        }
+  
+      .custom-button:hover{
+          background: greenyellow;
+      }
+  
+      .custom-text {
+          margin-left: 10px;
+          font-family: sans-serif;
+          color: #aaa;
+      }

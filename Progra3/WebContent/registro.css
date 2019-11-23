@@ -1,0 +1,99 @@
+/* Este archivo contiene el css
+    encargado del diseño de la página del registro */
+
+    * {
+      font-family: sans-serif; /* Change your font family */
+    }
+  header{
+      width: 100%;
+      background: #74A5CA;
+  }
+      /* Este contenido es para la parte del body*/
+    .secMenu {
+      margin: auto;
+      margin-top: 50px;
+      width: 900px;
+      height: 100px; 
+      background: rgb(23, 41, 100);
+      color: white;
+      border: 2px solid black;
+  } 
+          /* Se acomoda el logo de una lado */
+  .logo{
+    float: left; 
+  }
+  .service-title{
+    margin-top: 35px;
+    margin-left: 270px;
+    font-size: 60px;
+    float: left;
+  }
+
+      /* Este contenido respecta a la parte de */
+    .thirdMenu {
+      margin: auto;
+      margin-top: 50px;
+      width: 900px;
+      height: 300px; 
+      background: rgb(255, 255, 255);
+      border: none;
+    } 
+
+  /* Contenido del diseño del menu*/
+  .menu ul{
+      margin: 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .menu li:hover{
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  .menu li a{
+      display: block;
+      padding: 20px 20px;
+      color: seashell;
+      text-decoration: none;
+  }
+
+    /* Contenido css para el diseño de la tabla*/
+    .content-table {
+      border-collapse: collapse;
+      margin: 20 px 0;
+      font-size: 0.47cm;
+      min-width: 400px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+      margin-left: 0px;
+  }
+  .content-table thead tr{
+      background-color: #3E53A7;
+      color: rgb(255, 255, 255);
+      text-align: left;
+      
+  }
+  .content-table th,
+  .content-table td {
+      padding: 12px 15px;
+  }
+  .content-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    
+    .content-table tbody tr:nth-of-type(even) {
+      background-color: #eeeeee;
+    }
+    
+    .content-table tbody tr:last-of-type {
+      border-bottom: 2px solid #3E53A7;
+    }
+    
+    .content-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+    }

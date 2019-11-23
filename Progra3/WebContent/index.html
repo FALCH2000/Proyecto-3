@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Servicio OIJ</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    
+    
+	
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="logo.png" width= "70" alt="Logotipo" class="logo">
+        
+        <!-- Menú de mi página -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="registro.html">Registro de llamadas</a></li>
+                <li><a href="grafos.html">Grafos de llamadas</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="secMenu">
+            <h2 class=service-title> Servicio OIJ</h2>
+    </div>
+
+    <div class="thirdMenu">
+
+            <section class = "wrapper" >
+                    <section class = "main" > 
+                        <article>
+                            <H2> Registro de llamadas </H2>
+                        </article>
+                    </section>        
+                </section>
+                
+                
+
+        
+            <footer>
+                <p>Tercer Proyecto Programado - Servicio OIJ</p>
+            </footer>
+    </div>
+
+
+    
+    <input type='file' onchange='openFile(event)'><br>
+    <img id='output'>
+
+    
+    <script>
+
+
+
+function dividirCadena(cadenaADividir,separador) {
+    var arrayDeDelincuentes = cadenaADividir.split(separador);
+    console.log(arrayDeDelincuentes.length)
+    var arrayFinal = new Array();
+    
+    for(var i = 0; i < arrayDeDelincuentes.length; i++){
+    
+    	var info = arrayDeDelincuentes[i].split(";");	// Devuelve la info del delincuente
+    	
+    	var delincuente = new Object();
+    	delincuente.tel1 = info[0];
+    	delincuente.tel2 = info[1];
+    	delincuente.duracion = info[2];
+    	
+
+        }
+    	arrayFinal.push(delincuente);
+    	
+        xhr = new XMLHttpRequest();
+        var url = "http://localhost:9080/Progra3/Api/graphs/getCSV";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+            }
+        }
+        
+       	var data = JSON.stringify(arrayFinal);
+        xhr.send(data);
+        console.log(data);
+    	
+    	
+
+    
+    
+    
+    
+    /*
+    for (var i=0; i < arrayDeCadenas.length; i++) {
+        
+        console.log(arrayDeCadenas[i]);
+        var subS = arrayDeCadenas[i].split(",");
+        console.log(subS[0]);
+        console.log(subS[1]);
+        console.log(subS[2]);
+
+
+        xhr = new XMLHttpRequest();
+        var url = "http://localhost:9080/Progra3/index.html";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+            }
+        }
+        xhr.send(data);
+   
+    
+    
+   }
+    */
+}
+
+    var openFile = function(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function(){
+        var text = reader.result;
+        console.log(reader.result.substring(0, 200));
+        var coma = "\n";
+        dividirCadena(text, coma);
+        };
+        reader.readAsText(input.files[0]);  
+    };
+
+    </script>
+
+</body>
+</html>
